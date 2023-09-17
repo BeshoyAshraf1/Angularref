@@ -1,0 +1,48 @@
+//ng model kda beha lw 8ayrt fe al ts y7sal alta8yer lw 8art fe alfornt y7sal ta8er 
+<div class="form-group">
+  <label for="prdecat"></label>
+  <select class="form-control" name="cat" id="prdecat"[(ngModel)]="selaectedcategoryid">
+    <option *ngFor="let item of catlist"[value]="item.id">{{item.name}}</option>
+    <!-- <option *ngFor="let item of catlist">{{item.name}}</option> -->
+  </select>
+</div>
+<div class="text-secondary">
+[to be removed] For test : 
+{{selaectedcategoryid}}
+<button type="button" class="btn btn-primary"(click)="changedirectory()">changeselectedcategory</button>
+</div>
+<table class="table">
+    <thead class="bg-dark text-light">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">name</th>
+        <th scope="col">imageurl</th>
+        <th scope="col">price</th>
+        <th scope="col">quantity</th>
+        <th scope="col">categoryId</th>
+        <th>Count</th>
+        <th scope="col">Buy</th>
+      </tr>
+    </thead>
+    <tbody>
+        <!-- [class.bg-warning]="item.quantity==0"
+        da 3lshan a toggle al class fe al runtime 
+        y3ny alproduct lw b zero yt7al llon mo5talf bs msh sha8ala -->
+      <!-- <tr *ngFor="let item of prdlist"[class.bg-warning]="item.quantity==0"> -->
+        <!-- <tr *ngFor="let item of prdlist; let i = index; trackBy:prdtrackbyfn" [class.d-none]="selaectedcategoryid!=item.categoryID" -->
+        <!-- [style.background-color]="item.quantity!=0? 'yellow':'blue'"> -->
+        <tr *ngFor="let item of prdlist; let i = index;"[hidden]="item.quantity==0">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td><img src="{{item.imageurl}}"></td>
+        <td>{{item.price}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.categoryID}}</td>
+        <td><input #itemcount type="number"class="form-control"></td>
+        <td><button type="button" class="btn btn-secondary"(click)="buy(item.id,itemcount.value)"></button></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>
+    order item list  : {{ordertotalprice}}
+  </h3>
