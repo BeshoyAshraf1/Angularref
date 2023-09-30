@@ -14,7 +14,7 @@ export class ProductListComponent implements OnInit {
  ordertotalprice:number=0;
   constructor(){
     this.catlist=[{id:1,name:'labtop1'},{id:2,name:'labtop2'},{id:3,name:'labtop3'}]
-    this.prdlist=[{id:100,name:'lenovo',price:100,quantity:1,imageurl:'https://fakeimg.pl/250x100/',categoryID:1},
+    this.prdlist=[{id:100,name:'lenovo',price:10000000,quantity:1,imageurl:'https://fakeimg.pl/250x100/',categoryID:1},
     {id:200,name:'dell',price:150,quantity:3,imageurl:'https://fakeimg.pl/250x100/',categoryID:1},
     {id:300,name:'Hp',price:1250,quantity:0,imageurl:'https://fakeimg.pl/250x100/',categoryID:1},
    {id:400,name:'tablets',price:2350,quantity:5,imageurl:'https://fakeimg.pl/250x100/',categoryID:3},
